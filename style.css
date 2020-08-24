@@ -10,6 +10,7 @@
 :root{
     --primary: #048BA8;
     --secondary: #0DB39E;
+    /* --secondary: #3eb9a9; */
     --aqua: #16DB93;
     --darkblue:#54478C;
     --saphireblue:#2C699A;
@@ -38,17 +39,49 @@ header{
 header .top-bar{
     display: flex;
     /* background-color: thistle; */
-    justify-content: space-between;
+    /* justify-content: space-between; */
 }
 header .top-bar .logo{
-    /* display: flex; */
-    justify-content: center;
+    display: flex;
+    justify-content:space-evenly;
     align-items: center;
     /* background-color: teal; */
-    flex: 1;
+    flex:;
+    text-align: left;
 }
-header .top-bar .logo h2{
+header .top-bar .logo .tagline{
     color: var(--saphireblue);
+    font-size: 1.1rem;
+    position: relative;
+    /* padding-top: 1rem; */
+    display: flex;
+    align-content: center;
+}
+/* .tagline::before{
+    content: "";
+    position: absolute;
+    background-color: var(--primary);
+    width: 80%;
+    height: .1rem;
+    margin: auto;
+}
+.tagline::after{
+    content: "";
+    position: absolute;
+    background-color: var(--primary);
+    width: 80%;
+    height: .1rem;
+    bottom: 0%;
+    left: 0%;
+} */
+header .top-bar .logo img{
+    width: 5rem;
+    /* border: 2px solid red; */
+}
+header .top-bar .logo #tag{
+    width: 18rem;
+    /* border: 2px solid red; */
+
 }
 header .top-bar .search-bar{
     flex: 3;
@@ -66,26 +99,25 @@ header .top-bar .search-bar input{
     /* padding: .6rem 2rem; */
     border: 1px solid #dddddd;
     text-align: center;
+    width: 100%;
 }
-header .top-bar .search-bar .search-icon{
+.search-icon{
     position: relative;
-    background-color: yellow;
-    margin: 1rem;
     display: flex;
     flex-wrap: wrap;
 }
-header .top-bar .search-bar .search-icon i{
+.search-icon i{
     position: absolute;
     top: 30%;
-    right: 3%;
+    right: 5%;
     color: var(--secondary);
 }
 header .top-bar .cart{
     display: flex;
-    /* margin: 1rem; */
     align-items: center;
+    justify-content: space-around;
     flex-wrap: wrap;
-    margin-left: 2rem;
+    /* background-color: yellow; */
 }
 header .top-bar .cart i{
     margin:0 .3rem;
@@ -95,7 +127,7 @@ header .top-bar .cart .fa-heart,
 header .top-bar .cart .fa-user{
     color: white;
     background: var(--secondary) !important;
-    padding:0.5rem;
+    padding:0.3rem;
     align-items: center;
    border-radius: 3px;
 }
@@ -111,15 +143,88 @@ nav{
     background: var(--secondary);
     /* background-color: #3681BF; */
 }
+nav.sticky{
+    background-color: #3a9488;
+    position: fixed;
+     top: 0;
+    z-index: 99999;
+    width: 100%;
+    transition: .3s linear;
+}
+nav.sticky ul li a{
+    /* color: white !important; */
+}
 nav ul{
     /* background-color: thistle; */
 }
 nav ul li{
     font-weight: 400;
     margin: .1rem 1.2rem;
-    color: black !important;
+    letter-spacing: 1px;
 }
 nav ul li a{
-    color: black !important;
+    color: rgb(31, 28, 28) !important;
+    font-weight: 400;
 }
 /* -----------------------------Header Ends---------------------------- */
+/* -----------------------------Home / Carousel Starts---------------------------- */
+
+#home{
+    /* height: 90vh; */
+}
+.carousel-item img{
+    width: 80vh;
+    height: 90vh;
+    background-size: 100% 100%;
+}
+.carousel-caption{
+    background: rgba(0,0,0,0.7);
+
+}
+.carousel-caption h5{
+    color: var(--sandybrown);
+    text-shadow: 0 0 20px 0 rgba(0,0,0,0.4);
+}
+
+
+/* ---------------------------LOGIN AND SIGN UP FORM START!------------------- */
+.popup{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0,0,0,0.4);
+    z-index: 1000000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    display: none;
+    
+}
+.form-container{
+    position: relative;
+    width: 50%;
+    display: flex;
+    justify-content: space-around;
+    background-color: #f1f1f1;
+    box-shadow: 0 0 20px 0px rgba(0,0,0,0.7);
+    border-radius: 4px;
+
+}
+.fa-times{
+    position: absolute;
+    top: 1rem;
+    right:1rem;
+}
+.img-container{
+    width: 50%;
+    margin:;
+} 
+.img-container img{
+   height: 100%;
+   width: 100%;
+} 
+.form-container form{
+    padding: 3rem 2.4rem;
+}
