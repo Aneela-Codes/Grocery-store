@@ -29,127 +29,159 @@ button, input{
 i{
     cursor: pointer;
 }
+li{
+list-style-type:none;
+}
 
 /* -----------------------------Header Starts---------------------------- */
 header{
-    /* position: relative; */
-    border-bottom: 1px solid #dddddd;
+    /* background: var(--secondary); */
+    /* height: 13vh; */
+    position: relative;
 }
 
-header .top-bar{
+.top-bar{
+    /* background: salmon; */
     display: flex;
-    /* background-color: thistle; */
-    /* justify-content: space-between; */
+    /* justify-content: space-around;
+    align-items: center; */
 }
-header .top-bar .logo{
+.top-bar form{
+    position: relative;
     display: flex;
-    justify-content:space-evenly;
     align-items: center;
-    /* background-color: teal; */
-    flex:;
-    text-align: left;
-}
-header .top-bar .logo .tagline{
-    color: var(--saphireblue);
-    font-size: 1.1rem;
-    position: relative;
-    /* padding-top: 1rem; */
-    display: flex;
-    align-content: center;
-}
-/* .tagline::before{
-    content: "";
-    position: absolute;
-    background-color: var(--primary);
-    width: 80%;
-    height: .1rem;
-    margin: auto;
-}
-.tagline::after{
-    content: "";
-    position: absolute;
-    background-color: var(--primary);
-    width: 80%;
-    height: .1rem;
-    bottom: 0%;
-    left: 0%;
-} */
-header .top-bar .logo img{
-    width: 5rem;
-    /* border: 2px solid red; */
-}
-header .top-bar .logo #tag{
-    width: 18rem;
-    /* border: 2px solid red; */
-
-}
-header .top-bar .search-bar{
-    flex: 3;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
-    /* background-color: rgb(110, 23, 110); */
-    position: relative;
-    
+    margin: 0 0 0 0.7rem;
 }
 
-header .top-bar .search-bar input{
-    height: 2rem;
-    /* padding: .6rem 2rem; */
-    border: 1px solid #dddddd;
-    text-align: center;
-    width: 100%;
-}
-.search-icon{
-    position: relative;
-    display: flex;
-    flex-wrap: wrap;
-}
-.search-icon i{
-    position: absolute;
-    top: 30%;
-    right: 5%;
+.top-bar .fa-bars{
     color: var(--secondary);
+    background:none;
+    font-size: 1.5rem;
 }
-header .top-bar .cart{
+  
+.top-bar form input{
+    /* position: relative; */
+    width: 18rem;
+    border: 1px solid #dddddd;
+    outline: none !important;
+}
+.top-bar form .fa-search{
+    position: absolute;
+    right:.9rem;
+    top: 1.3rem;
+    transform: translateY(-50%);
+    color: var(--secondary);
+    background:white;
+}
+.logo{
     display: flex;
     align-items: center;
-    justify-content: space-around;
-    flex-wrap: wrap;
-    /* background-color: yellow; */
+    width: 80% !important;
 }
-header .top-bar .cart i{
-    margin:0 .3rem;
+.logo.hide{
+    display: none;
 }
-header .top-bar .cart .fa-shopping-cart,
-header .top-bar .cart .fa-heart,
-header .top-bar .cart .fa-user{
-    color: white;
-    background: var(--secondary) !important;
-    padding:0.3rem;
+.logo .tagline{
+    display: flex;
     align-items: center;
-   border-radius: 3px;
+    justify-content: center;
+    /* background: yellow; */
+    height: 100%;
+    /* position: relative; */
 }
-header .top-bar .cart span{
-    color: gray;
-    font-weight: 100;
-    font-size: .9rem;
-    margin: 0 .3rem;
+.logo .tagline p{
+    /* background: chocolate; */
+    display: flex;
+    align-items: center;
+    margin: .1rem 0 0 0 ;    
 }
-
+.logo img{
+    width: 4rem;
+    border-radius: 50%;
+}
+.cart{
+    display: flex;
+    /* background: mediumaquamarine; */
+    justify-content: space-between;
+    align-items: center;
+}
+.container-fluid{
+    margin: 0 !important;
+    width: 100vw !important;
+}
+.cart i{
+    margin: 0 0.3rem 0 0;
+    padding: 6px;
+    border-radius: 20%;
+    background: var(--secondary);
+    color: #f1f1f1;
+    font-size: .7rem;
+}
+.cart span{
+    font-weight: 300 !important;
+  
+}
 /* ------Navbar---------- */
 nav{
-    background: var(--secondary);
-    /* background-color: #3681BF; */
+    /* width: 18rem; */
+    width: 0;
+    position: fixed;
+    right: 0;
+    height: 100%;
+    background-color: var(--secondary);
+    background: black linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4));
+    top: 0;
+    padding: 2rem 0;
+    transition: linear .3s;
+    z-index: 10000000;
 }
-nav.sticky{
-    background-color: #3a9488;
+nav ul li{
+    font-weight: 400;
+    margin: .1rem 1.2rem;
+    letter-spacing: 1px;
+  
+}
+
+nav li:hover,
+nav .dropdown-menu a:hover {
+    background: linear-gradient(rgba(220,100,0,.1),rgba(0,0,0,.2));
+
+}
+nav .fa-chevron-right{
+    color: var(--secondary);
+    font-size: 2rem;
+    margin-left: 18rem !important;
+}
+nav .dropdown-menu{
+    background: black linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)) !important;
+
+}
+nav ul li a,
+nav .dropdown-menu a{
+    color:white !important;
+    font-weight: 300;
+}
+nav ul li a{
+    border-bottom: 1px solid #222222;
+}
+.navbar-toggler{
+    display: flex;
+    justify-content: flex-end !important;
+    position: absolute;
+    right: 1rem;
+}
+
+.top-bar.sticky{
+    /* background: linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.8)); */
     position: fixed;
      top: 0;
-    z-index: 99999;
+    z-index: 99;
     width: 100%;
     transition: .3s linear;
+    color: white;
+    background: rgb(46,45,45) linear-gradient(rgba(200,200,200,0.1),rgba(0,0,0,0.3)); 
+    padding: .8rem 0;
+    font-size: .9rem
 }
 nav.sticky ul li a{
     /* color: white !important; */
@@ -157,74 +189,101 @@ nav.sticky ul li a{
 nav ul{
     /* background-color: thistle; */
 }
-nav ul li{
-    font-weight: 400;
-    margin: .1rem 1.2rem;
-    letter-spacing: 1px;
-}
-nav ul li a{
-    color: rgb(31, 28, 28) !important;
-    font-weight: 400;
-}
-/* -----------------------------Header Ends---------------------------- */
-/* -----------------------------Home / Carousel Starts---------------------------- */
-
-#home{
-    /* height: 90vh; */
-}
-.carousel-item img{
-    width: 80vh;
-    height: 90vh;
-    background-size: 100% 100%;
-}
-.carousel-caption{
-    background: rgba(0,0,0,0.7);
-
-}
-.carousel-caption h5{
-    color: var(--sandybrown);
-    text-shadow: 0 0 20px 0 rgba(0,0,0,0.4);
-}
 
 
-/* ---------------------------LOGIN AND SIGN UP FORM START!------------------- */
-.popup{
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    background: rgba(0,0,0,0.4);
-    z-index: 1000000;
+@import url('https://fonts.googleapis.com/css2?family=Mulish:wght@300&display=swap');
+*{
+    padding: 0;
+    margin: 0;
+    font-family: 'Mulish', sans-serif;
+}
+body{
+    font-size:.8rem;
+}
+.col-md-9,
+.col{
+    padding-left: 0;
+}
+.carousel-bg{
+    width: 100%;
+    background: #81ecec;
+    padding: 3rem 0;
     display: flex;
     align-items: center;
     justify-content: center;
-    display: none;
-    
 }
-.form-container{
-    position: relative;
-    width: 50%;
-    display: flex;
-    justify-content: space-around;
-    background-color: #f1f1f1;
-    box-shadow: 0 0 20px 0px rgba(0,0,0,0.7);
-    border-radius: 4px;
+.card{
+    width: 100%;
+    padding: 4em;
+    background: rgb(46,45,45);
+    color: white;
+    box-shadow: 0 4px 8px 2px rgba(0,0,0,0.5), 0 4px 8px 2px rgba(0,0,0,0.5);
+}
+.row{
+    margin: 0;
+}
+.path{
+    color: gray;
+    /* margin: 1rem; */
+}
+.path a{
+    color: white;
+}
+.info{
+    padding: 6vh 0;
 
 }
-.fa-times{
-    position: absolute;
-    top: 1rem;
-    right:1rem;
+.checked{
+    color: ;
+    margin-right: 10px;
 }
-.img-container{
-    width: 50%;
-    margin:;
-} 
-.img-container img{
-   height: 100%;
-   width: 100%;
-} 
-.form-container form{
-    padding: 3rem 2.4rem;
+.carousel-inner img{
+    width: 350px;
+    height: 280px;
+    border-radius: 1.0rem;
+    /* height: 100px; */
+    /* width:75%; */
+    padding: 1rem;
+}
+.carousel-inner .fa-heart{
+    font-size: 2rem;
+    color: #f1f1f1;
+}
+.carousel-inner .fa-heart:hover{
+    color: #F29E4C;
+}
+#reviews{
+    margin-left: 3vh;
+}
+.prices{
+    margin-top: 1rem;
+}
+label.radio{
+    cursor: pointer;
+}
+label.radio span{
+    padding: 1vh 4vh;
+    background: rgb(54,54,54);
+    display: inline-block;
+    color: gray;
+    margin-right: 2vh;
+    border: 1px solid transparent;
+
+}
+label.radio input:checked+span{
+    border: 1px solid white;
+    color: white;
+}
+label.radio input{
+    position: absolute;
+    top: 0;
+    left: 0;
+    visibility: hidden;
+    pointer-events: none;
+}
+.carousel-control-prev{
+    width: 0;
+}
+.carousel-control-next{
+    left: 7vh;
 }
